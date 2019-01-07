@@ -9,6 +9,8 @@ import { AuthService } from '../../auth/auth.service';
     styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+    navbarOpen = false;
+
     constructor (private storeData: StoreDataService,
                 private authService: AuthService) {}
 
@@ -31,5 +33,9 @@ export class HeaderComponent {
 
     isAuthenticated() {
         return this.authService.isAuthenticated();
+    }
+
+    toggleNavbar() {
+        this.navbarOpen = !this.navbarOpen;
     }
 }
